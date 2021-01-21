@@ -17,6 +17,11 @@ def cocanb_or_english()
             string_list[i] = string_list[i].split("")
             lengths.append(chr(ord('`')+len(string_list[i])))
             end_letters.append(string_list[i][-1])
+        suffix = [None]*(len(end_letters)+len(lengths))
+        suffix[::2] = end_letters
+        suffix[1::2] = lengths
+        output = ''.join(string_list) + "non" + suffix
+        print(output)
     else:
         print("Please enter a valid input.")
         cocanb_or_english()
