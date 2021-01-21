@@ -1,4 +1,5 @@
 import unidecode
+import numpy
 
 choose_lang = input("Would you like to translate Cocánb to English or English to Cocánb? Press[c/e]")
 
@@ -11,8 +12,11 @@ def cocanb_or_english()
         string = input("Please input your English phrase: ")
         string_list = string.split(" ")
         end_letters = []
+        lengths = []
         for i in string_list:
             string_list[i] = string_list[i].split("")
+            lengths.append(chr(ord('`')+len(string_list[i])))
+            end_letters.append(string_list[i][-1])
     else:
         print("Please enter a valid input.")
         cocanb_or_english()
