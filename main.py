@@ -1,6 +1,8 @@
-import numpy
+import random
 
 choose_lang = input("Would you like to translate Cocánb to English or English to Cocánb? Press[c/e]")
+
+spaces = ["", "", "", "", r"'", " "]
 
 def cocanb_or_english():
     if choose_lang =="c":
@@ -24,7 +26,16 @@ def cocanb_or_english():
         suffix[1::2] = lengths
         output_list = new_string_list + ["non"] + suffix
         output = "".join(output_list)
-        print(output)
+        insert_points = range (1, len(output))
+        selected = random.sample(insert_points, round(len(insert_points) / 4))
+        selected.sort()
+        selected.append(len(output))  #  include the last slice
+        temp = 0  #  start with first slice
+        result = []
+        for i in selected:
+            result.append(output[temp:i])
+            temp = i
+        print(" ".join(result))
     else:
         print("Please enter a valid input.")
         cocanb_or_english()
