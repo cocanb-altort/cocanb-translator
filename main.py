@@ -11,6 +11,9 @@ def cocanb_or_english()
         string = input("Please input your English phrase: ")
         # and this
     else:
+        print("Please enter a valid input.")
         cocanb_or_english()
+
+cocanb_or_english()
 
 input("Press any key to exit.")
