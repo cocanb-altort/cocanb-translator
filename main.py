@@ -35,7 +35,16 @@ def cocanb_or_english():
         for i in selected:
             result.append(output[temp:i])
             temp = i
-        print(" ".join(result))
+        a = ["a","ā","ă","ą","ä","æ","à","á","â","ã"]
+        e = ["e","ė","ę","ě","ĕ","è","é","ê","ë","ē"]
+        i = ["i","ı","į","ī","ï","î","í","ì"]
+        o = ["o","œ","ø","õ","ô","ó","ò","ö"]
+        u = ["u","ū","ů","ų","ü","ù","ú","û"]
+        y = ["y","ý"]
+        # add more diacritics
+        result_without_diacritics = " ".join(result)
+        final_result = result_without_diacritics.replace("a", random.choice(a)).replace("e", random.choice(e))
+        print()
     else:
         print("Please enter a valid input.")
         cocanb_or_english()
