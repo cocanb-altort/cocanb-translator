@@ -1,2 +1,2 @@
-# cocanb translator
+# Cocánb Translator
  
