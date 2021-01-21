@@ -19,7 +19,7 @@ def cocanb_or_english():
             lengths.append(chr(ord('`')+len(string_list[i])))
             end_letters.append(string_list[i][-1])
             del string_list[i][-1]
-            new_string_list.append("".join(string_list[i])) # this no work
+            new_string_list.append("".join(string_list[i]))
             i = i + 1
         suffix = [None]*(len(end_letters)+len(lengths))
         suffix[::2] = end_letters
@@ -29,8 +29,8 @@ def cocanb_or_english():
         insert_points = range (1, len(output))
         selected = random.sample(insert_points, round(len(insert_points) / 4))
         selected.sort()
-        selected.append(len(output))  #  include the last slice
-        temp = 0  #  start with first slice
+        selected.append(len(output))
+        temp = 0
         result = []
         for i in selected:
             result.append(output[temp:i])
@@ -43,8 +43,8 @@ def cocanb_or_english():
         y = ["y","ý"]
         # add more diacritics
         result_without_diacritics = " ".join(result)
-        final_result = result_without_diacritics.replace("a", random.choice(a)).replace("e", random.choice(e))
-        print()
+        final_result = result_without_diacritics.replace("a", random.choice(a)).replace("e", random.choice(e)).replace("i", random.choice(i)).replace("o", random.choice(o)).replace("u", random.choice(u)).replace("y", random.choice(y))
+        print(final_result)
     else:
         print("Please enter a valid input.")
         cocanb_or_english()
