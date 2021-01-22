@@ -26,10 +26,13 @@ def add_diacritics(result):
 
 def cocanb_to_english():
     string = input("Please input your Cocánb phrase: ")
-    position_of_separator = string.find("non")
     new_string = unidecode.unidecode(string).replace(" ", "")
-    # stuff
-        
+    position_of_separator = new_string.find("non")
+    string_list = list(new_string)
+    i = len(string_list)
+    while i >= position_of_separator + 2:
+        # do this
+
 def english_to_cocanb():
     string = input("Please input your English phrase: ")
     string_list = string.split(" ")
