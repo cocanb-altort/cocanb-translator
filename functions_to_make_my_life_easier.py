@@ -29,9 +29,28 @@ def cocanb_to_english():
     new_string = unidecode.unidecode(string).replace(" ", "")
     position_of_separator = new_string.find("non")
     string_list = list(new_string)
-    i = len(string_list)
+    i = len(string_list) - 1
+    end_letters = []
+    number_of_letters = []
     while i >= position_of_separator + 2:
-        # do this
+        number_of_letters.insert(0, ord(string_list[i]) - 96)
+        i = i - 1
+        del string_list[i + 1]
+        end_letters.insert(0, string_list[i])
+        i = i - 1
+        del string_list[i + 1]
+    j = 0
+    while j < 3:
+        j = j + 1
+        del string_list[1 - j]
+    position = 0
+    k = 0
+    for index in number_of_letters:
+        position = position + index
+        string_list.insert(position, end_letters[k] + " ")
+        k = k + 1
+    final_result = "".join(string_list)
+    print(final_result)
 
 def english_to_cocanb():
     string = input("Please input your English phrase: ")
