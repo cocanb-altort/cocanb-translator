@@ -26,31 +26,27 @@ def add_diacritics(result):
 
 def cocanb_to_english():
     string = input("Please input your Cocánb phrase: ")
-    new_string = unidecode.unidecode(string).replace(" ", "")
-    position_of_separator = new_string.find("non")
-    string_list = list(new_string)
-    i = len(string_list) - 1
-    end_letters = []
-    number_of_letters = []
-    while i >= position_of_separator + 2:
-        number_of_letters.insert(0, ord(string_list[i]) - 96)
-        i = i - 1
-        del string_list[i + 1]
-        end_letters.insert(0, string_list[i])
-        i = i - 1
-        del string_list[i + 1]
-    j = 0
-    while j < 3:
-        j = j + 1
-        del string_list[1 - j]
-    position = 0
-    k = 0
-    for index in number_of_letters:
-        position = position + index
-        string_list.insert(position, end_letters[k] + " ")
-        k = k + 1
-    final_result = "".join(string_list)
-    print(final_result)
+    string = string.replace(" ", "").replace(r"'", "")
+    position_of_separator = string.find("non")
+    if position_of_separator == -1:
+        print("That's not Cocánb")
+        cocanb_to_english()
+    else:
+        sliced_string = string.split("non")
+        root = sliced_string[0]
+        suffix = sliced_string[1]
+        suffix_list = list(suffix)
+        end_letters = suffix_list[0::2]
+        del suffix_list[0::2]
+        word_count_list = suffix_list
+        word_count_list = ord(index) - 96 for index in word_count_list
+        for index in word_count_list:
+            if index < 0:
+                if index > -32
+                    index = index + 32
+                else:
+                    del index
+        # do this
 
 def english_to_cocanb():
     string = input("Please input your English phrase: ")
