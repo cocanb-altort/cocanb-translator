@@ -1,82 +1,27 @@
 import random
 import unidecode
 
-def add_diacritics(result):
-    a = ["a","a","a","a","a","ā","ă","ą","ä","à","á","â","ã"]
-    e = ["e","e","e","e","e","ė","ę","ě","ĕ","è","é","ê","ë","ē"]
-    i = ["i","i","i","i","i","ı","į","ī","ï","î","í","ì"]
-    o = ["o","o","o","o","o","ø","õ","ô","ó","ò","ö"]
-    u = ["u","u","u","u","u","ū","ů","ų","ü","ù","ú","û"]
-    y = ["y","y","y","y","y","ý","ÿ"]
-    h = ["h","h","h","h","h","ħ"]
-    w = ["w","w","w","w","w","ŵ"]
-    c = ["c","c","c","c","c","č","ç"]
-    r = ["r","r","r","r","r","ř"]
-    s = ["s","s","s","s","s","š"]
-    n = ["n","n","n","n","n","ň"]
-    d = ["d","d","d","d","d","đ"]
-    l = ["l","l","l","l","l","ł"]
-    g = ["g","g","g","g","g","ğ"]
-    result_without_diacritics = " ".join(result)
-    result_without_diacritics = result_without_diacritics.replace("oe", "œ").replace("ae", "æ")
-    final_result = result_without_diacritics.replace("g", random.choice(g), 1).replace("l", random.choice(l), 1).replace("d", random.choice(d), 1).replace("n", random.choice(n), 1).replace("s", random.choice(s), 1).replace("r", random.choice(r), 1).replace("c", random.choice(c), 1).replace("w", random.choice(w), 1).replace("h", random.choice(h), 1).replace("a", random.choice(a), 1).replace("e", random.choice(e), 1).replace("i", random.choice(i), 1).replace("o", random.choice(o), 1).replace("u", random.choice(u), 1).replace("y", random.choice(y), 1)
-    for index in range(len(result)):
-        final_result = final_result.replace("g", random.choice(g), 1).replace("l", random.choice(l), 1).replace("d", random.choice(d), 1).replace("n", random.choice(n), 1).replace("s", random.choice(s), 1).replace("r", random.choice(r), 1).replace("c", random.choice(c), 1).replace("w", random.choice(w), 1).replace("h", random.choice(h), 1).replace("a", random.choice(a), 1).replace("e", random.choice(e), 1).replace("i", random.choice(i), 1).replace("o", random.choice(o), 1).replace("u", random.choice(u), 1).replace("y", random.choice(y), 1)
-    return final_result
+def add_diacritics():
+    a = ["a", "à", "á", "â", "ä"]
+    e = ["e", "è", "é", "ê"]
+    i = ["i", "ì", "í", "î"]
+    o = ["o", "ò", "ó", "ô", "ö"]
+    u = ["u", "ù", "ú", "û", "ü"]
+    y = ["y", "ý"]
+    g = ["g", "ğ"]
+    c = ["c", "č", "ć"]
+    s = ["s", "š", "ś"]
+    z = ["z", "ž", "ź"]
+    n = ["n", "ň"]
+    r = ["r", "ř"]
+    l = ["l", "ł"]
+    d = ["d", "đ"]
 
 def cocanb_to_english():
-    string = input("Please input your Cocánb phrase: ")
-    string = string.replace(" ", "").replace(r"'", "")
-    position_of_separator = string.find("non")
-    if position_of_separator == -1:
-        print("That's not Cocánb")
-        cocanb_to_english()
-    else:
-        sliced_string = string.split("non")
-        root = sliced_string[0]
-        suffix = sliced_string[1]
-        suffix_list = list(suffix)
-        end_letters = suffix_list[0::2]
-        del suffix_list[0::2]
-        word_count_list = suffix_list
-        word_count_list = ord(index) - 96 for index in word_count_list
-        for index in word_count_list:
-            if index < 0:
-                if index > -32
-                    index = index + 32
-                else:
-                    del index
-        # do this
+    print("This does not work yet")
 
 def english_to_cocanb():
-    string = input("Please input your English phrase: ")
-    string_list = string.split(" ")
-    end_letters = []
-    lengths = []
-    i = 0
-    new_string_list = []
-    while i <= len(string_list) - 1:
-        string_list[i] = list(string_list[i])
-        lengths.append(chr(ord('`')+len(string_list[i])))
-        end_letters.append(string_list[i][-1])
-        del string_list[i][-1]
-        new_string_list.append("".join(string_list[i]))
-        i = i + 1
-    suffix = [None]*(len(end_letters)+len(lengths))
-    suffix[::2] = end_letters
-    suffix[1::2] = lengths
-    output_list = new_string_list + ["non"] + suffix
-    output = "".join(output_list)
-    insert_points = range (1, len(output))
-    selected = random.sample(insert_points, round(len(insert_points) / 4))
-    selected.sort()
-    selected.append(len(output))
-    temp = 0
-    result = []
-    for i in selected:
-        result.append(output[temp:i])
-        temp = i
-    print(add_diacritics(result))
+    print("This does not work yet")
 
 def cocanb_or_english():
     choose_lang = input("Would you like to translate Cocánb to English or English to Cocánb? Press[c/e]")
