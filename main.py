@@ -1,5 +1,3 @@
-import functions_to_make_my_life_easier as f
-
 def cocanb_or_english():
     choose_lang = input("Would you like to translate Cocánb to English or English to Cocánb? Press[c/e]: ")
     if choose_lang == "c":
