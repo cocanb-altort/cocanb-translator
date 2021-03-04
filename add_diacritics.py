@@ -37,6 +37,5 @@ def add_diacritics(string: str): #this no work :(
     for letter in listed_string:
       for key in diacritics_dict:
         if key == letter:
-          letter = random.choice(diacritics_dict[key])
-    output_string = "".join(listed_string)
-    return output_string
+          string.replace(letter, random.choice(diacritics_dict[key]))
+    return string

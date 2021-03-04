@@ -3,11 +3,13 @@ from english_to_cocanb import english_to_cocanb
 from config import view_config, change_config
 
 def cocanb_or_english():
-    choose_lang = input("Would you like to translate Cocánb to English or English to Cocánb? Press[c/e]: ")
-    if choose_lang == "c":
-        cocanb_to_english()
-    elif choose_lang == "e":
-        english_to_cocanb()
+    choose_lang = input("Would you like to translate Cocánb to English, translate English to Cocánb or configure your settings? Press[1/2/3/4]: ")
+    if choose_lang == "1":
+      cocanb_to_english()
+    elif choose_lang == "2":
+      english_to_cocanb()
+    elif choose_lang == "3":
+      
     else:
         print("Please enter a valid input.")
         cocanb_or_english()
