@@ -16,4 +16,3 @@ def cocanb_or_english():
 cocanb_or_english()
 
 input("Press enter to exit.")
-python

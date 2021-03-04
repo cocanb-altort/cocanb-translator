@@ -15,5 +15,28 @@ r_diacritics = ["r", "ř"]
 l_diacritics = ["l", "ł"]
 d_diacritics = ["d", "đ"]
 
-def add_diacritics():
-    pass
+diacritics_dict = {
+  "a" = a_diacritics,
+  "e" = e_diacritics,
+  "i" = i_diacritics,
+  "o" = o_diacritics,
+  "u" = u_diacritics,
+  "y" = y_diacritics,
+  "g" = g_diacritics,
+  "c" = c_diacritics,
+  "s" = s_diacritics,
+  "z" = z_diacritics,
+  "n" = n_diacritics,
+  "r" = r_diacritics,
+  "l" = l_diacritics,
+  "d" = d_diacritics
+}
+
+def add_diacritics(string: str):
+    listed_string = list(string)
+    for letter in listed_string:
+      for key in diacritics_dict:
+        if key == letter:
+          letter = random.choice(diacritics_dict[key])
+    output_string = "".join(listed_string)
+    return output_string
