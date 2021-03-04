@@ -1,3 +1,5 @@
+import json
+
 # Removes the charachter if it's not letter or num or quotation mark
 def modify(word: list):
     to_remove = []
@@ -17,14 +19,14 @@ def modify(word: list):
 def cocanbise(string):
     res = []
 
-    # split string into words
+    # Splits string into words
     initial_list = " ".split(string)
 
     # Iterating through every letter of the list
     for w in initial_list:
         res.append(modify(list(w)))
 
-    # count letters of each word
+    # Counts letters of each word
     word_counts = []
     for word in res:
         word_counts.append(len(word))
