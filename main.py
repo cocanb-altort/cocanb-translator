@@ -1,5 +1,6 @@
 from cocanb_to_english import cocanb_to_english
 from english_to_cocanb import english_to_cocanb
+from config import view_config, change_config
 
 def cocanb_or_english():
     choose_lang = input("Would you like to translate Cocánb to English or English to Cocánb? Press[c/e]: ")
@@ -15,3 +16,4 @@ def cocanb_or_english():
 cocanb_or_english()
 
 input("Press enter to exit.")
+python
