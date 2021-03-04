@@ -31,6 +31,9 @@ def cocanbise(string):
     for word in res:
         word_counts.append(len(word))
 
+with open("config.json") as config:
+  
+
 
 def english_to_cocanb():
     initial_phrase = input("Please enter your English Phrase: ")
