@@ -16,7 +16,7 @@ def modify(word: list):
     return word
 
 
-def cocanbise(string):
+def cocanbise(string: str):
     res = []
 
     # Splits string into words
