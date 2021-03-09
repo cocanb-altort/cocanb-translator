@@ -221,3 +221,11 @@ function englishToCocanb(input) {
 
     return output;
 }
+
+function form(language, input) {
+    if (language.value == "cocanb") {
+        return englishToCocanb(input.value);
+    } else if (language.value == "english") {
+        return cocanbToEnglish(input.value);
+    }
+}
